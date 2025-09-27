@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Moviebox</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="app__header"><h1>Moviebox</h1></header>
+
+    <section class="panel">
+      <ul id="movieList" class="list" aria-live="polite"></ul>
+
+      <form id="addForm" class="add">
+        <input id="movieInput" type="text" placeholder="Add your Movie" aria-label="Movie name" required />
+        <button class="btn btn--add" type="submit">ADD</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Modal -->
+  <div id="modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle" aria-modal="true">
+    <div class="modal__card" role="document">
+      <h2 id="modalTitle">Edit movie</h2>
+      <input id="editInput" type="text" aria-label="Movie name" />
+      <div class="modal__actions">
+        <button id="saveBtn" class="btn btn--add">Save</button>
+        <button id="cancelBtn" class="btn btn--ghost">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+/* Color system (matching your screenshot) */
+:root{
+  --bg: #2c2a28;         /* backdrop image tone (approx) */
+  --panel: #f3f3f3;      /* list background */
+  --header: #e06146;     /* coral header + buttons */
+  --header-dark: #c24c34;
+  --text: #1e1e1e;
+  --muted: #6b6b6b;
+  --border: #e7e7e7;
+  --green: #118917;      /* ADD button */
+  --green-dark: #0d6e12;
+  --radius: 10px;
+  --shadow: 0 8px 20px rgba(0,0,0,.25);
+  --container-w: 820px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  color:var(--text);
+  background:
+    linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
+    url('https://images.unsplash.com/photo-1507915135761-41a0a222c709?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat fixed;
+}
+
+.app{max-width:var(--container-w); margin: 40px auto; background:transparent; border-radius: var(--radius); box-shadow: var(--shadow)}
+.app__header{background:var(--header); color:#fff; padding:18px 24px; border-radius: var(--radius) var(--radius) 0 0; text-align:center; letter-spacing: .2em}
+.app__header h1{margin:0; font-weight:700}
+
+.panel{background: var(--panel); padding: 22px; border:1px solid #ddd; border-top:0; border-radius: 0 0 var(--radius) var(--radius)}
+
+.list{list-style:none; padding:0; margin:0 0 22px}
+.item{display:grid; grid-template-columns:1fr auto auto; gap:12px; align-items:center; padding:14px 0; border-bottom:1px solid var(--border)}
+.item__title{font-family: 'Georgia', serif; letter-spacing:.12em}
+.btn{cursor:pointer; padding:8px 14px; border-radius:8px; border:0; font-weight:700; letter-spacing:.1em}
+.btn--del{background: var(--header); color:#fff}
+.btn--del:hover{background: var(--header-dark)}
+.btn--edit{background: #fff; color: var(--header); border:2px solid var(--header)}
+.btn--edit:hover{background:#ffe9e4}
+.btn--add{background: var(--green); color:#fff; border:0}
+.btn--add:hover{background: var(--green-dark)}
+.btn--ghost{background:#fff; border:1px solid #ccc}
+
+.add{display:flex; gap:12px; justify-content:center; align-items:center; padding-top:6px}
+.add input{flex:1; padding:12px 14px; border-radius: 6px; border:1px solid #cfcfcf}
+.add .btn--add{min-width:96px}
+
+/* Modal */
+.modal{
+  position: fixed; inset:0; display:none; place-items:center;
+  background: rgba(0,0,0,.55); padding:20px; z-index:100;
+}
+.modal[aria-hidden="false"]{display:grid}
+.modal__card{background:#fff; width:min(520px, 92vw); border-radius:12px; padding:20px; box-shadow: var(--shadow)}
+.modal__card h2{margin:0 0 12px}
+.modal__card input{width:100%; padding:12px 14px; border:1px solid #ccc; border-radius:8px}
+.modal__actions{display:flex; gap:10px; justify-content:flex-end; margin-top:14px}
